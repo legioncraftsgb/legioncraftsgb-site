@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LegionCraftsGB — placeholder site
 
-## Getting Started
+A clean, mobile-friendly landing page for the **LegionCraftsGB** brand — the parent company for our 3D printing and app design work. This is a single static page; no database, no auth, no backend.
 
-First, run the development server:
+- **Domain:** [legioncraftsgb.com](https://legioncraftsgb.com)
+- **Contact:** admin@legioncraftsgb.com
+- **Stack:** Next.js 16 (App Router) · TypeScript · Tailwind CSS v4
 
-```bash
+## Run locally
+
+```powershell
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The whole page lives in three files:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/page.tsx` — the landing page (header, intro, "What we do" cards, "Apps — coming soon" cards, contact, footer)
+- `app/layout.tsx` — root HTML, dark theme, metadata
+- `app/globals.css` — Tailwind import + base body styles
 
-## Learn More
+To change the headline, the intro text, or which apps are listed, edit `app/page.tsx` — Tailwind hot-reloads.
 
-To learn more about Next.js, take a look at the following resources:
+## Build / lint
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```powershell
+npm run build   # production build (catches type + lint errors)
+npm run lint    # ESLint only
+npm run start   # serve the production build locally
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy to Vercel
 
-## Deploy on Vercel
+1. Push this folder to a new GitHub repo (`legioncraftsgb-site`).
+2. In [Vercel](https://vercel.com/new) → **Add New → Project** → import the repo. Accept the defaults — Vercel auto-detects Next.js.
+3. After the first deploy, go to **Project → Settings → Domains** and add:
+   - `legioncraftsgb.com`
+   - `www.legioncraftsgb.com`
+4. Vercel will show the DNS records to add at your domain registrar. Add them and wait for propagation (usually minutes, up to a few hours).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Updating the page later
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+When you're ready to swap the placeholder for real content (a real logo, app screenshots, a product catalogue for the 3D printing side), edit `app/page.tsx`. The design is intentionally simple so the next iteration can replace large blocks without fighting the existing structure.
