@@ -23,18 +23,19 @@ export default function Home() {
   return (
     <main className="flex flex-1 flex-col items-center px-6 py-16 sm:py-24">
       <div className="w-full max-w-3xl flex flex-col gap-16">
-        <header className="flex flex-col items-center text-center gap-6">
-          <div className="bg-white rounded-2xl p-4 shadow-xl shadow-black/40">
-            <Image
-              src="/logo.png"
-              alt="LegionCraftsGB"
-              width={1295}
-              height={1214}
-              priority
-              className="h-40 w-auto sm:h-48"
-            />
-          </div>
-          <h1 className="sr-only">LegionCraftsGB</h1>
+        <header className="flex flex-col items-center text-center gap-4">
+          <Image
+            src="/logo.png"
+            alt=""
+            aria-hidden="true"
+            width={1536}
+            height={1024}
+            priority
+            className="h-48 w-auto sm:h-56"
+          />
+          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
+            LegionCraftsGB
+          </h1>
           <p className="text-lg text-neutral-400 max-w-xl">
             The parent company for our 3D printing and app design work.
           </p>
